@@ -9,8 +9,10 @@ const buttonVariants = cva(
   {
     variants: {
       variant: {
-        portfolio: "portfolio-button bg-action text-primary-foreground hover:bg-action-hover shadow-[var(--shadow-button)]",
-        quiet: "portfolio-button border border-border bg-secondary/80 text-foreground hover:bg-accent hover:border-muted-foreground",
+        portfolio:
+          "portfolio-button bg-action text-primary-foreground hover:bg-action-hover shadow-[var(--shadow-button)]",
+        quiet:
+          "portfolio-button border border-border bg-secondary/80 text-foreground hover:bg-accent hover:border-muted-foreground",
         editorial: "editorial-button text-foreground hover:text-primary",
         default: "bg-primary text-primary-foreground shadow hover:bg-primary/90",
         destructive: "bg-destructive text-destructive-foreground shadow-sm hover:bg-destructive/90",
