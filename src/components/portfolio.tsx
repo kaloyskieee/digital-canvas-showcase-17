@@ -1,4 +1,4 @@
-import { useEffect, useState, type ReactNode } from "react";
+import { useEffect, useRef, useState, type ReactNode } from "react";
 import { motion, useReducedMotion, AnimatePresence } from "motion/react";
 import { ArrowUpRight, ArrowRight, Menu, X, Github, ExternalLink, Code2, Braces, Atom, Database, Terminal, Layers, Mail, Linkedin, GraduationCap, Lightbulb, Gamepad2, GitBranch, Monitor, ShoppingBag, Headphones, BookOpen, MousePointer2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -43,6 +43,7 @@ export function ProjectPreview({ project }: { project: Project }) {
 }
 export function Projects() {
   const [selected, setSelected] = useState<Project | null>(null);
+  const triggerRef = useRef<HTMLButtonElement | null>(null);
   return <section id="projects" className="section"><div className="page-width"><Reveal className="section-top"><div><SectionLabel number="03">Selected work</SectionLabel><h2>Ideas. Built into something.</h2><p className="section-description">A space for experiments, thoughtful solutions, and work that reflects the way I think.</p></div><span className="example-label">05 project concepts · replace with your work</span></Reveal><div className="projects-grid">{projects.map((project, i) => <Reveal key={project.id} delay={i % 2 * .08} className="project-card"><ProjectPreview project={project} /><div className="project-info"><div className="project-category"><span>{project.category}</span><span className="text-muted-foreground">CONCEPT {String(i + 1).padStart(2, "0")}</span></div><h3>{project.name}</h3><p>{project.description}</p><div className="badges">{project.tech.map(t => <span className="badge" key={t}>{t}</span>)}</div><div className="project-links"><Button variant="ghost" onClick={() => setSelected(project)}>View Project <ArrowUpRight /></Button><Button variant="ghost" disabled title="Add your real repository URL to enable this link"><Github /> Source Code</Button></div></div></Reveal>)}</div></div><Dialog open={!!selected} onOpenChange={open => { if (!open) setSelected(null); }}><DialogContent className="max-h-[85svh] overflow-y-auto max-w-xl"><DialogTitle>{selected?.name}</DialogTitle><DialogDescription>Example project concept — not a completed project.</DialogDescription>{selected && <><ProjectPreview project={selected} /><p className="text-sm leading-relaxed text-muted-foreground">{selected.concept}</p><div className="badges">{selected.tech.map(t => <span className="badge" key={t}>{t}</span>)}</div><p className="text-xs text-muted-foreground">Your project description, real screenshots, live website, and source code can be added here.</p></>}</DialogContent></Dialog></section>;
 }
 export function Education() {
