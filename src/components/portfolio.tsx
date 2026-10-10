@@ -42,7 +42,7 @@ export function Reveal({
     <motion.div
       className={className}
       initial={reduce ? false : { opacity: 0.85, y: 16 }}
-      animate={reduce ? { opacity: 1, y: 0 } : undefined}
+      animate={reduce ? { opacity: 1, y: 0 } : false}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.12 }}
       transition={{

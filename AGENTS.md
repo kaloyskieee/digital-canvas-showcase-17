@@ -13,3 +13,5 @@
 - Keep this portfolio as one scrolling index route with section anchors because the requested navigation explicitly uses smooth scrolling between sections.
 - Use reusable portfolio components and semantic styles in the global design system so sections share motion, spacing, and visual behavior.
 - Open sample project details locally and expose external destinations only when supplied, so placeholder content never creates fabricated links.
+- Render illustrative project previews in a dedicated browser-safe component and hide their miniature contents from assistive technology because the accessible project name and details carry the actual information.
+- Use Motion values rather than React state for pointer animation so movement does not rerender the hero content.
