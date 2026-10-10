@@ -7,7 +7,25 @@ export const profile = {
   email: "",
   github: "",
   linkedin: "",
+  statistics: [
+    { label: "Projects completed", value: null as number | null },
+    { label: "Technologies explored", value: null as number | null },
+    { label: "Years of learning", value: null as number | null },
+  ],
 };
+
+export const skillGroups = [
+  { name: "Frontend", icon: "frontend", items: ["HTML", "CSS", "JavaScript", "React", "Tailwind CSS"] },
+  { name: "Backend", icon: "backend", items: ["Node.js", "PHP", "Python"] },
+  { name: "Databases", icon: "database", items: ["MySQL", "PostgreSQL", "Firebase"] },
+  { name: "Tools & Workflow", icon: "tools", items: ["Git", "GitHub", "VS Code", "Figma"] },
+] as const;
+
+export const interests = [
+  { icon: "ideas", title: "Side projects & new ideas", text: "Exploring possibilities and making small ideas tangible." },
+  { icon: "gaming", title: "Gaming & technology", text: "Curious about the experiences and systems that bring us together." },
+  { icon: "community", title: "Open source & learning", text: "Sharing knowledge, learning from others, and growing together." },
+] as const;
 
 export const projects = [
   { id: "folio", name: "Personal Portfolio", category: "DESIGN & DEVELOPMENT", description: "A personal corner of the internet. A thoughtful space for projects, ideas, and the journey behind them.", tech: ["React", "Tailwind CSS", "Motion"], kind: "portfolio", concept: "Explore an expressive portfolio concept with a clear visual identity, accessible navigation, and considered motion." },
